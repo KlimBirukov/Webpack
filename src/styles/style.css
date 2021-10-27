@@ -1,0 +1,16 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    background-color: black;
+    padding-top: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+h1 {
+    color: red;
+    text-align: center;
+}

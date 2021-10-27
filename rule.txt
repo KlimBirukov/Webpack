@@ -1,0 +1,53 @@
+
+// cli
+npm install -D html-webpack-plugin
+
+// webpack.config.js
+const path = require('path');
+const HTMLWebpackPlugin = require('html-webpack-plugin');
+
+plugins: [
+        new HTMLWebpackPlugin({
+            template: './src/index.html',
+            inject: 'body'
+        })
+
+// cli
+npm install -D clean-webpack-plugin
+
+// webpack.config.js
+const {CleanWebpackPlugin} = require('clean-webpack-plugin');
+
+plugins: [
+        new CleanWebpackPlugin()
+   ]
+
+// package.json
+"scripts": {
+    "build": "webpack --mode production",
+    "dev": "webpack --mode development"
+  },
+
+// webpack.config.js
+context: path.resolve(__dirname, 'src'), можно убрать 'src' в путях к файлам
+
+// cli
+npm install -D style-loader css-loader
+
+//webpack.config.js
+ module: {
+        rules: [
+            {
+                test: /\.css$/i,
+                use: [
+                    'style-loader',
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            modules: true,
+                        }
+                    }
+                ]
+            }
+        ]
+    }
