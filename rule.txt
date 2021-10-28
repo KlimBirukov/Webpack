@@ -35,18 +35,13 @@ context: path.resolve(__dirname, 'src'), можно убрать 'src' в пут
 npm install -D style-loader css-loader
 
 //webpack.config.js
- module: {
+module: {
         rules: [
             {
-                test: /\.css$/i,
+                test: /\.css$/,
                 use: [
                     'style-loader',
-                    {
-                        loader: 'css-loader',
-                        options: {
-                            modules: true,
-                        }
-                    }
+                    'css-loader'
                 ]
             }
         ]
