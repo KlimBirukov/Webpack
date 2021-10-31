@@ -25,7 +25,8 @@ plugins: [
 // package.json
 "scripts": {
     "build": "webpack --mode production",
-    "dev": "webpack --mode development"
+    "dev": "webpack --mode development",
+    "watch": "webpack --mode development --watch"
   },
 
 // webpack.config.js
@@ -43,6 +44,16 @@ module: {
                     'style-loader',
                     'css-loader'
                 ]
+            },
+            {
+                test: /\.(png|jpg|gif|csv)$/,
+                type: 'asset/resource',
             }
         ]
     }
+
+    +
+
+    output: {
+            assetModuleFilename: 'images/[hash][ext][query]'
+        },
