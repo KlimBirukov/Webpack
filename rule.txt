@@ -62,3 +62,11 @@ module: {
             assetModuleFilename: 'src/[hash][ext][query]'
         },
 
+// cli
+npm install normalize.css
+
+// style.css
+@import "~normalize.css";
+
+//package.json
+"main": 'index.js' --> "private": true,
