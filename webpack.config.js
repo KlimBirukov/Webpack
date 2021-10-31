@@ -37,6 +37,15 @@ module.exports = {
             {
                 test: /\.(ttf|woff|woff2|eot)$/,
                 type: 'asset/resource'
+            },
+            {
+                test: /\.xml$/,
+                use: ['xml-loader']
+            },
+            {
+                test: /\.csv$/,
+                use: ['csv-loader'],
+
             }
         ]
     }

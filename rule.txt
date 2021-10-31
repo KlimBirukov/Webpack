@@ -70,3 +70,21 @@ npm install normalize.css
 
 //package.json
 "main": 'index.js' --> "private": true,
+
+// cli
+npm install -D xml-loader
+npm install -D csv-loader
+
+// webpack.config.js
+module: {
+        rules: [
+            {
+                test: /\.xml$/,
+                use: ['xml-loader']
+            },
+            {
+                test: /\.csv$/,
+                use: ['csv-loader'],
+            }
+
+
