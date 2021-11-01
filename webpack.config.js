@@ -15,10 +15,15 @@ module.exports = {
         assetModuleFilename: 'src/[hash][ext][query]'
     },
     resolve: {
-        extensions: ['.js','.json'],
+        extensions: ['.js', '.json'],
         alias: {
-            '@assets': path.resolve(__dirname,'src/assets'),
-            '@styles': path.resolve(__dirname,'src/styles'),
+            '@assets': path.resolve(__dirname, 'src/assets'),
+            '@styles': path.resolve(__dirname, 'src/styles'),
+        }
+    },
+    optimization: {
+        splitChunks: {
+            chunks: "all"
         }
     },
     plugins: [
@@ -40,20 +45,28 @@ module.exports = {
             {
                 test: /\.(png|jpg|gif|csv)$/,
                 type: 'asset/resource',
+                generator: {
+                    filename: 'img/[hash][ext][query]'
+                }
             },
             {
                 test: /\.(ttf|woff|woff2|eot)$/,
-                type: 'asset/resource'
+                type: 'asset/resource',
+                generator: {
+                    filename: 'fonts/[hash][ext][query]'
+                }
             },
             {
                 test: /\.xml$/,
-                use: ['xml-loader']
+                use: ['xml-loader'],
             },
             {
                 test: /\.csv$/,
                 use: ['csv-loader'],
-
-            }
+                generator: {
+                    filename: 'data/[hash][ext][query]'
+                }
+            },
         ]
     }
 }
