@@ -87,4 +87,11 @@ module: {
                 use: ['csv-loader'],
             }
 
+resolve: {
+        extensions: ['.js','.json'],
+        alias: {
+            '@assets': path.resolve(__dirname,'src/assets'),
+            '@styles': path.resolve(__dirname,'src/styles'),
+        }
+    },
 

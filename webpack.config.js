@@ -14,6 +14,13 @@ module.exports = {
         path: path.resolve(__dirname, 'dist'),
         assetModuleFilename: 'src/[hash][ext][query]'
     },
+    resolve: {
+        extensions: ['.js','.json'],
+        alias: {
+            '@assets': path.resolve(__dirname,'src/assets'),
+            '@styles': path.resolve(__dirname,'src/styles'),
+        }
+    },
     plugins: [
         new HTMLWebpackPlugin({
             template: './index.html',
