@@ -48,6 +48,9 @@ module: {
             {
                 test: /\.(png|jpg|gif|csv)$/,
                 type: 'asset/resource',
+                generator: {
+                    filename: 'img/[hash][ext][query]'
+                }
             },
             {
                 test: /\.(ttf|woff|woff2|eot)$/,
@@ -94,4 +97,23 @@ resolve: {
             '@styles': path.resolve(__dirname,'src/styles'),
         }
     },
+
+optimization: {
+        splitChunks: {
+            chunks: "all"
+        }
+    },
+
+// cli
+npm i -D webpack-dev-server
+
+//webpack.config.js
+devServer: {
+        port: 5000
+    },
+
+//package.json
+"scripts": {
+    "server": "webpack-dev-server --mode development --open"
+}
 
