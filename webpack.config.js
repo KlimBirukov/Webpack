@@ -1,6 +1,7 @@
 const path = require('path');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
+const webpack = require('webpack');
 
 module.exports = {
     context: path.resolve(__dirname, 'src'),
@@ -27,7 +28,10 @@ module.exports = {
         }
     },
     devServer: {
-        port: 5000
+        port: 5000,
+        liveReload: true,
+        open: true,
+        hot: true,
     },
     plugins: [
         new HTMLWebpackPlugin({

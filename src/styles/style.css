@@ -22,3 +22,8 @@ h1 {
     width: 200px;
     margin: 0 auto;
 }
+
+.code{
+    color: blue;
+    margin: 1rem 5rem;
+}

@@ -9,8 +9,8 @@ import * as $ from 'jquery'
 
 const post = new Post("Webpack post title", webpackLogo);
 
-$('.postInfo').html(post.toString())
-$('.csvInfo').html(csv_.toString())
+$('.postInfo').addClass('code').html(post.toString())
+$('.csvInfo').addClass('code').html(csv_.toString())
 
 console.log('JSON: ', json)
 console.log('XML: ', xml)
